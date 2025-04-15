@@ -1,0 +1,788 @@
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /* 防止出现滚动条 */
+        height: 100vh;
+        /* 高度为全屏 */
+        display: flex;
+        font-family: tahoma, 微软雅黑, sans-serif;
+    }
+    /* 设置导航栏 */
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: #fff;
+        padding: 30px;
+        text-align: center;
+        background-image: linear-gradient(180deg, #021319 0, transparent);
+        z-index: 10;
+        /* 保证导航栏在最上层 */
+    }
+    
+    header img {
+        width: 80px;
+        height: 80px;
+        float: left;
+        border-radius: 20%;
+    }
+    
+    .title {
+        width: 200px;
+        height: auto;
+        float: left;
+    }
+    
+    .title span {
+        font-size: 22px;
+    }
+    
+    .title h1 {
+        font-size: 12px;
+    }
+    
+    .nav {
+        width: 1200px;
+        float: left;
+        margin-left: 300px;
+        margin-top: 28px;
+    }
+    
+    .nav a {
+        text-decoration: none;
+        float: left;
+        margin-left: 70px;
+        font-size: 15px;
+        color: #fff;
+    }
+    /* 每个section */
+    
+    section {
+        flex: 0 0 100vw;
+        /* 每个section占满视口宽度 */
+        height: 100vh;
+        /* 每个section高度为视口高度 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        /* Section间的分隔线 */
+    }
+    
+    #about .background-video video {
+        /* 自动播放，循环播放，静音 position: absolute; */
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 8;
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        object-fit: cover;
+        /* 保持比例，充满容器 */
+    }
+    
+    #about .slogan-img {
+        width: 800px;
+        height: 100%;
+        z-index: -1;
+        float: left;
+        /* margin-left: -140px; */
+        /* position: relative; */
+        /* top: 0;
+        left: 0;
+        */
+    }
+    
+    #about .slogan-img img {
+        width: 100%;
+        height: 100%;
+        /* float: left; */
+        z-index: -1;
+        float: left;
+        /* margin-left: 100px; */
+        position: absolute;
+    }
+    
+    #about .news-bar {
+        float: left;
+        margin-left: -1300px;
+        margin-top: 650px;
+        width: 400px;
+        height: 200px;
+        z-index: 3;
+        position: absolute;
+    }
+    
+    #about .news-bar dl dt {
+        font-size: 20px;
+        color: #fff;
+    }
+    
+    #about .news-bar dl dt a {
+        font-size: 12px;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 280px;
+    }
+    
+    #about .news-bar dl dd {
+        font-size: 20px;
+        color: #fff;
+        margin-top: 20px;
+        margin-left: -10px;
+    }
+    
+    #about .news-bar dl dd a {
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    
+    #about .download-banner {
+        width: 800px;
+        height: 400px;
+        position: absolute;
+        float: left;
+        margin-top: 950px;
+        margin-left: 1800px;
+    }
+    
+    #about .download-banner .item {
+        width: 200px;
+        height: 220px;
+        float: left;
+        margin-left: -70px;
+    }
+    
+    #about .download-banner .item span {
+        font-size: 15px;
+        color: #fff;
+    }
+    
+    #about .download-banner .item .item-img img {
+        width: 90px;
+        height: 90px;
+        margin-top: 10px;
+    }
+    
+    #decorate img {
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+    }
+    
+    #decorate .title-bar {
+        width: 1800px;
+        height: 400px;
+        float: left;
+        position: relative;
+        display: inline-block;
+    }
+    
+    #decorate .title-bar img {
+        float: left;
+        width: 1450px;
+        height: 600px;
+        margin-left: -60px;
+        margin-top: -100px;
+        display: block;
+    }
+    
+    #decorate .title-bar::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        /* 垂直居中 */
+        right: 200px;
+        /* 将三角形定位到图片右边 */
+        transform: translateY(-50%);
+        /* 让三角形垂直居中 */
+        width: 0;
+        height: 0;
+        border-top: 425px solid transparent;
+        /* 透明的左边 */
+        border-right: 425px solid transparent;
+        /* 透明的右边 */
+        border-top: 425px solid #15142e;
+        /* 红色的等边三角形 */
+        transform: translateY(-50%) rotate(495deg);
+    }
+    
+    #decorate .tab-bar-center {
+        width: 1200px;
+        height: 80px;
+        /* position: absolute; */
+    }
+    
+    #decorate .tab-bar-center .tab-bar-center-left img {
+        float: left;
+        width: 200px;
+        height: 60px;
+        margin-top: 20px;
+        /* z-index: 1; */
+        margin-left: 80px;
+    }
+    
+    #decorate .tab-bar-center .tab-bar-center-left .active span {
+        color: black;
+        text-decoration: none;
+        float: left;
+        margin-top: 35px;
+        z-index: 1;
+        margin-left: 120px;
+    }
+    
+    #decorate .tab-bar-center .tab-bar-center-right img {
+        float: left;
+        width: 200px;
+        height: 60px;
+        margin-top: 20px;
+        /* z-index: 1; */
+        margin-left: 300px;
+    }
+    
+    #decorate .tab-bar-center .tab-bar-center-right .active span {
+        color: black;
+        text-decoration: none;
+        float: left;
+        margin-top: 35px;
+        z-index: 1;
+        margin-left: 120px;
+    }
+    
+    #decorate .tab-bar-center .tab-bar-center-right .active span:hover {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.8);
+        /* 背光效果 */
+    }
+    
+    #decorate .tab-bar-center .tab-bar-center-left .active span:hover {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.8);
+        /* 背光效果 */
+    }
+    
+    #decorate .tab-bar-center .title {
+        width: 400px;
+        height: 80px;
+        float: left;
+        margin-left: 300px;
+    }
+    
+    #decorate .tab-bar-center .title h3 {
+        background: linear-gradient(180deg, #caff84 60%, #f1f7dd);
+        line-height: 1;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        margin-left: 100px;
+        float: left;
+        position: relative;
+        font-size: 50px;
+        margin-top: 5px;
+        font-family: "微软雅黑";
+    }
+    
+    #decorate .tab-bar-center .title p {
+        background: linear-gradient(180deg, #caff84 60%, #f1f7dd);
+        line-height: 1;
+        /* 限制背景图像或颜色只应用到文本区域 */
+        background-clip: text;
+        /* 只影响文本的颜色，不会改变文本的透明度 */
+        color: transparent;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        margin-left: 100px;
+        float: left;
+        position: relative;
+        font-size: 10px;
+        margin-top: -30px;
+        font-family: "微软雅黑";
+    }
+    
+    .content-main-bar {
+        width: 800px;
+        height: 300px;
+        float: left;
+        margin-top: 40px;
+        margin-left: 200px;
+        z-index: 1;
+    }
+    
+    #decorate .title-bar .content-main-bar .content-main-bar-left img {
+        width: 400px;
+        height: 270px;
+        float: left;
+        margin-right: 10px;
+        margin-top: 5px;
+        margin-left: 0px;
+        z-index: 2;
+        object-fit: cover;
+    }
+    
+    #decorate .title-bar .content-main-bar .content-main-bar-left img:hover {
+        /* 缩放比例1.1 */
+        transform: scale(1.1);
+        /* object-position: center;
+    transition: transform 0.3s;
+    object-fit: cover;
+    will-change: transform; */
+    }
+    
+    #decorate .title-bar .content-main-bar .content-main-bar-right img {
+        width: 400px;
+        height: 270px;
+        float: right;
+        margin-top: 5px;
+        margin-left: 410px;
+        z-index: 2;
+    }
+    
+    #decorate .title-bar .content-main-bar .content-main-bar-right img:hover {
+        transform: scale(1.1);
+    }
+    
+    #gameplay img {
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    #gameplay .title-bar {
+        width: 1800px;
+        height: 400px;
+        float: left;
+        position: relative;
+        display: inline-block;
+    }
+    
+    #gameplay .title-bar img {
+        float: left;
+        width: 1450px;
+        height: 600px;
+        margin-left: 410px;
+        margin-top: -100px;
+        display: block;
+    }
+    
+    #gameplay .title-bar::after {
+        content: '';
+        /* position: absolute; */
+        top: 50%;
+        /* 垂直居中 */
+        right: 200px;
+        /* 将三角形定位到图片右边 */
+        transform: translateY(-50%);
+        /* 让三角形垂直居中 */
+        width: 0;
+        height: 0;
+        border-top: 425px solid transparent;
+        /* 透明的左边 */
+        border-right: 425px solid transparent;
+        /* 透明的右边 */
+        border-top: 425px solid #15142e;
+        /* 红色的等边三角形 */
+        transform: translateY(-50%) rotate(315deg);
+        float: left;
+        margin-left: 199px;
+        margin-top: 200px;
+        z-index: -1;
+    }
+    
+    #gameplay .tab-bar-center {
+        width: 1200px;
+        height: 80px;
+        float: left;
+        margin-left: 600px;
+        position: absolute;
+    }
+    
+    #gameplay .tab-bar-center .tab-bar-center-left img {
+        float: left;
+        width: 200px;
+        height: 60px;
+        margin-top: 20px;
+        /* z-index: 0; */
+        margin-left: 800px;
+    }
+    
+    #gameplay .tab-bar-center .tab-bar-center-left .active span {
+        color: black;
+        text-decoration: none;
+        float: left;
+        margin-top: 35px;
+        z-index: 1;
+        margin-left: 850px;
+    }
+    
+    #gameplay .tab-bar-center .tab-bar-center-right img {
+        float: left;
+        width: 200px;
+        height: 60px;
+        margin-top: 20px;
+        /* z-index: 1; */
+        margin-left: 1010px;
+    }
+    
+    #gameplay .tab-bar-center .tab-bar-center-right .active span {
+        color: black;
+        text-decoration: none;
+        float: left;
+        margin-top: 35px;
+        z-index: 1;
+        margin-left: 100px;
+    }
+    
+    #gameplay .tab-bar-center .tab-bar-center-right .active span:hover {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.8);
+        /* 背光效果 */
+    }
+    
+    #gameplay .tab-bar-center .tab-bar-center-left .active span:hover {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.8);
+        /* 背光效果 */
+    }
+    
+    #gameplay .tab-bar-center .title {
+        width: 400px;
+        height: 80px;
+        float: left;
+        margin-left: -50px;
+        margin-top: -80px;
+    }
+    
+    #gameplay .tab-bar-center .title h3 {
+        background: linear-gradient(180deg, #caff84 60%, #f1f7dd);
+        line-height: 1;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        margin-left: 100px;
+        float: left;
+        position: relative;
+        font-size: 50px;
+        margin-top: 5px;
+        font-family: "微软雅黑";
+    }
+    
+    #gameplay .tab-bar-center .title p {
+        background: linear-gradient(180deg, #caff84 60%, #f1f7dd);
+        line-height: 1;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        margin-left: 100px;
+        float: left;
+        position: relative;
+        font-size: 10px;
+        margin-top: -30px;
+        font-family: "微软雅黑";
+    }
+    
+    #gameplay .content-main-bar {
+        width: 1700px;
+        height: 300px;
+        float: left;
+        margin-top: 50px;
+        margin-left: -500px;
+        z-index: 1;
+    }
+    
+    #gameplay .content-main-bar .content-main-bar-item {
+        width: 350px;
+        height: 270px;
+        float: left;
+        margin-right: 20px;
+        z-index: 5;
+    }
+    
+    #gameplay .title-bar .content-main-bar .content-main-bar-item img {
+        width: 100%;
+        height: 170px;
+        float: left;
+        margin-right: 10px;
+        margin-top: 5px;
+        margin-left: 0px;
+        z-index: 3;
+        object-fit: cover;
+        position: relative;
+    }
+    
+    #gameplay .title-bar .content-main-bar .content-main-bar-item img:hover {
+        transform: scale(1.1);
+        /* object-position: center;
+    transition: transform 0.3s;
+    object-fit: cover;
+    will-change: transform; */
+    }
+    
+    #gameplay .title-bar .content-main-bar .content-main-bar-item .content-main-bar-item-title {
+        width: 100%;
+        height: 100px;
+        background-color: #302760;
+        float: left;
+        z-index: 3;
+        color: #fff;
+        position: relative;
+    }
+    
+    #gameplay .title-bar .content-main-bar .content-main-bar-item .content-main-bar-item-title span {
+        font-size: 17px;
+        margin-top: 15px;
+        float: left;
+        z-index: 3;
+        margin-left: 5px;
+    }
+    
+    #gameplay .title-bar .content-main-bar .content-main-bar-item .content-main-bar-item-title h1 {
+        font-size: 10px;
+        margin-top: 40px;
+        float: left;
+        z-index: 3;
+        margin-left: 5px;
+        color: #837bad;
+        /* position: relative; */
+    }
+    
+    #download img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    #download .download-banner img {
+        width: 1450px;
+        height: 600px;
+        float: right;
+        margin-right: 30px;
+    }
+    
+    #download .title-bar {
+        width: 1800px;
+        height: 400px;
+        float: left;
+        position: relative;
+        display: inline-block;
+    }
+    
+    #download .title-bar img {
+        float: left;
+        width: 1450px;
+        height: 600px;
+        margin-left: -60px;
+        margin-top: -100px;
+        display: block;
+    }
+    
+    #download .title-bar::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        /* 垂直居中 */
+        right: 200px;
+        /* 将三角形定位到图片右边 */
+        transform: translateY(-50%);
+        /* 让三角形垂直居中 */
+        width: 0;
+        height: 0;
+        border-top: 425px solid transparent;
+        /* 透明的左边 */
+        border-right: 425px solid transparent;
+        /* 透明的右边 */
+        border-top: 425px solid #15142f;
+        /* 红色的等边三角形 */
+        transform: translateY(-50%) rotate(495deg);
+    }
+    
+    #download .tab-bar-center {
+        width: 1200px;
+        height: 80px;
+        /* position: absolute; */
+    }
+    
+    #download .tab-bar-center .title {
+        width: 500px;
+        height: 80px;
+        /* position: absolute; */
+    }
+    
+    #download .tab-bar-center .title h3 {
+        background: linear-gradient(180deg, #caff84 60%, #f1f7dd);
+        line-height: 1;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        margin-left: 100px;
+        float: left;
+        position: relative;
+        font-size: 50px;
+        margin-top: 5px;
+        font-family: "微软雅黑";
+    }
+    
+    #download .tab-bar-center .title p {
+        background: linear-gradient(180deg, #caff84 60%, #f1f7dd);
+        line-height: 1;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        margin-left: 100px;
+        float: left;
+        position: relative;
+        font-size: 10px;
+        margin-top: -30px;
+        font-family: "微软雅黑";
+    }
+    
+    #download .title-bar .tab-bar-center .title-QRcode {
+        width: 400px;
+        height: 200px;
+        float: left;
+        margin-left: -400px;
+        margin-top: 200px;
+        position: relative;
+        z-index: -1;
+    }
+    
+    #download .title-bar .tab-bar-center .title-QRcode .title-QRcode-left {
+        width: 120px;
+        height: 160px;
+        float: left;
+    }
+    
+    #download .title-bar .tab-bar-center .title-QRcode .title-QRcode-left img {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+    
+    #download .title-bar .tab-bar-center .title-QRcode .title-QRcode-left span {
+        font-size: small;
+        color: #fff;
+        float: left;
+        margin-top: 135px;
+        margin-left: 30px;
+    }
+    
+    #download .title-bar .tab-bar-center .title-QRcode .title-QRcode-right {
+        width: 120px;
+        height: 160px;
+        float: left;
+    }
+    
+    #download .title-bar .tab-bar-center .title-QRcode .title-QRcode-right img {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    
+    #download .title-bar .tab-bar-center .title-QRcode .title-QRcode-right span {
+        font-size: small;
+        color: #fff;
+        float: left;
+        margin-top: 135px;
+        margin-left: 30px;
+    }
+    
+    #download .slideshow-container {
+        position: relative;
+        width: 700px;
+        height: 500px;
+        overflow: hidden;
+    }
+    
+    #download .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    
+    #download .slide.active {
+        opacity: 1;
+    }
+    
+    #download .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    #about .years {
+        width: 60px;
+        height: 90px;
+        float: left;
+        margin-top: -450px;
+        margin-left: -50px;
+        position: relative;
+    }
+    
+    #about .years img {
+        width: 70px;
+        height: 90px;
+        cursor: pointer;
+    }
+    /* 显示的小窗口 */
+    
+    #about .tooltip {
+        width: 100px;
+        height: 100px;
+        background: #3c3c3c;
+        opacity: 0.5;
+        display: none;
+        float: right;
+        /* right: 100%; */
+        /* 将窗口放置在图片的左边 */
+        margin-right: 60px;
+        border-radius: 8px;
+        position: relative;
+        font-size: 13px;
+        color: #fff;
+    }
+    /* 鼠标悬停时显示小窗口 */
+    
+    #about .years:hover .tooltip {
+        width: 300px;
+        height: 500px;
+        display: block;
+    }
+    
+    #about .right-box {
+        width: 262px;
+        height: 148px;
+        background-color: #837bad;
+        float: left;
+        margin-left: 800px;
+        margin-top: 350px;
+        position: relative;
+    }
+    
+    #about .right-box-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* 填充整个 */
+        /* opacity: 0; */
+        /* 默认隐藏 */
+        /* object-fit: contain; */
+    }
