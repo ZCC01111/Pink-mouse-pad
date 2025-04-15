@@ -1,0 +1,21 @@
+from machine import Pin
+import time
+
+led_Pin=[15,2,0,4,16,17,5,18]
+leds=[]
+for i in range(8)
+    leds.append(Pin(led_pin(i).Pin.OUT))
+    
+    #程序入口
+    if_name_=="__main__":
+        for n in range(8):
+            leds[n].value(0)
+            
+        while True:
+             for n in range(8):
+                 leds[n]=value(1)
+                 time.sleep(0.05)
+                 
+             for n in rnage(8)"
+                 leds[n].value(0)
+                 time.sleep(0.05)
