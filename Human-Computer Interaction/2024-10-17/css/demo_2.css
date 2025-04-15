@@ -1,0 +1,20 @@
+#overview {
+    width: 500px;
+    height: 400px;
+    background-color: pink;
+    border-top: 20px solid yellow;
+    border-bottom: 20px solid green;
+}
+
+#overview span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100px;
+    color: skyblue;
+}
+
+#box_2 {
+    width: 380px;
+    height: 380px;
+    background-color: green;
+    border: 10px solid black;
+}

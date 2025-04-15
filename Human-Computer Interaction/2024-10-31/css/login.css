@@ -1,0 +1,67 @@
+#box_big {
+    width: 1920px;
+    height: 1080px;
+    background-color: #eeeeee;
+    position: absolute;
+}
+
+.box {
+    width: 504px;
+    height: 493px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-left: 200px;
+}
+
+.logo_img {
+    width: 50%;
+    height: 50%;
+    margin-top: 30px;
+}
+
+.title {
+    font-size: 40px;
+    margin-left: 125px;
+}
+
+#login_box_name {
+    width: 300px;
+    height: 49px;
+    margin-left: 100px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#login_box_password {
+    width: 300px;
+    height: 49px;
+    margin-left: 100px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#login_btn {
+    width: 310px;
+    height: 49px;
+    margin-left: 100px;
+    text-align: center;
+    margin-top: 10px;
+    background-color: #f2aa75;
+    border: 0;
+}
+
+#login_btn:hover {
+    cursor: pointer;
+    background-color: orange;
+}
+
+#checkbox {
+    margin-left: 98px;
+    margin-top: 14px;
+}

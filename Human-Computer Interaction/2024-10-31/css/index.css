@@ -1,0 +1,51 @@
+#box_big {
+    width: 261px;
+    height: 340px;
+    background-image: url(../images/bg.gif);
+    margin: 0 auto;
+    position: relative;
+}
+
+.li_list {
+    background-color: aliceblue;
+    width: 240px;
+    height: 278px;
+    margin-left: 10px;
+    margin-top: 45px;
+    position: absolute;
+}
+
+.li_list_span {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.li_list_span a {
+    text-decoration: none;
+}
+
+.li_list_span hr {
+    style: none;
+    border: none;
+    border-top: 1px dashed #ccc;
+}
+
+.logo_text {
+    font-family: 黑体;
+    color: white;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: absolute;
+    font-size: 20px;
+}
+
+.box_big_small {
+    width: 5px;
+    height: 10px;
+    color: #11df1f;
+    flex: left;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 15px;
+}

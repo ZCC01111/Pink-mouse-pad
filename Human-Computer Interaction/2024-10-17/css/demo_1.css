@@ -1,0 +1,15 @@
+.title_font {
+    background-color: #333;
+    width: 750px;
+    height: 30px;
+    color: #b0b0b0;
+}
+
+.title_font span:hover {
+    color: white;
+}
+
+.title_font span {
+    font-size: 20px;
+    margin-left: 10px;
+}

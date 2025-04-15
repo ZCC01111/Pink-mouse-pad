@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* 清除浮动影响 */
+
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.desktop {
+    width: 100%;
+    height: 800px;
+}
+
+.desktop_header {
+    width: 100%;
+    height: 42px;
+    background-color: #333;
+    top: 0;
+    /* position: sticky;*/
+    position: fixed;
+    /* position: absolute; */
+    z-index: 1000;
+}
+
+.desktop_header img {
+    float: left;
+    margin-left: 250px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.desktop_banner_nav {
+    float: left;
+    margin-left: 670px;
+    margin-top: 10px;
+}
+
+.desktop_banner_nav li {
+    float: left;
+    margin-left: 10px;
+    list-style: none;
+    color: white;
+}
+
+.desktop_banner_nav li a {
+    text-decoration: none;
+    color: white;
+}
+
+.desktop_banner_nav li a:hover {
+    cursor: pointer;
+}
+
+.Slideshow {
+    width: 100%;
+    height: 480px;
+    position: relative;
+    /* margin-top: 42px; */
+    background-color: #181c28;
+}
+
+.Slideshow img {
+    float: left;
+    margin-left: 500px;
+    margin-top: -480px;
+    overflow: hidden;
+}
+
+.Slideshow_list {
+    width: 248px;
+    height: 480px;
+    float: left;
+    background-color: #1b2a3f;
+    margin-left: 240px;
+}
+
+.Slideshow_list li {
+    list-style: none;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.Slideshow_list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.Slideshow_list li a span {
+    float: right;
+    margin-right: 20px;
+}
+
+.desktop_content {
+    background-color: white;
+    width: 100%;
+    height: 740px;
+}
+
+.desktop_content h1 {
+    font-size: 20px;
+    float: left;
+    margin-top: 45px;
+    margin-left: 780px;
+}
+
+.desktop_content h2 {
+    font-size: 16px;
+    float: left;
+    margin-top: 95px;
+    margin-left: -160px;
+}
+
+.desktop_content_page {
+    border: #cccccc solid 1px;
+    width: 1200px;
+    height: 450px;
+    float: left;
+    margin-left: 320px;
+    margin-top: 80px;
+}
+
+.desktop_content_page h3 {
+    margin-top: 45px;
+    font-size: 25px;
+    margin-left: 50px;
+}
+
+.desktop_content_page hr {
+    width: 110px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.desktop_content_page_item {
+    float: left;
+    font-size: 12px;
+    margin-left: 50px;
+    margin-top: 19px;
+}
+
+.desktop_content_page_item p {
+    margin-top: 19px;
+}
+
+.desktop_content_page_start {
+    width: 160px;
+    height: 50px;
+    border: solid 2px #ffa500;
+    margin-left: 50px;
+    margin-top: 240px;
+}
+
+.desktop_content_page_start span {
+    float: left;
+    font-size: 15px;
+    margin-left: 50px;
+    margin-top: 15px;
+    color: #ffa500;
+}
+
+.desktop_content_page_right {
+    width: 580px;
+    height: 350px;
+}
+
+.desktop_content_page_right img {
+    width: 580px;
+    height: 350px;
+    float: left;
+    margin-top: -320px;
+    margin-left: 550px;
+}
+
+.desktop_footer {
+    width: 100%;
+    height: 400px;
+    background-color: #2e3033;
+    margin-top: 140px;
+}
+
+.desktop_footer_item {
+    float: left;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.desktop_footer_item ul {
+    margin-top: 10px;
+}
+
+.desktop_footer_item ul li {
+    list-style: none;
+    margin-top: 2px;
+}
+
+.desktop_footer_item ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
+}
+
+.desktop_footer_item ul li a:hover {
+    cursor: pointer;
+}
+
+.desktop_footer_item span {
+    color: white;
+    font-size: 15px;
+}
+
+.desktop_footer_right {
+    float: right;
+    margin-right: 200px;
+    margin-top: 50px;
+}
+
+.desktop_footer_right span {
+    font-size: 10px;
+    color: white;
+}
+
+.desktop_footer_right span p {
+    margin-top: 5px;
+}
+
+.desktop_footer_right_buy {
+    width: 190px;
+    height: 35px;
+    background-color: #00a4ff;
+    margin-top: 30px;
+}
+
+.desktop_footer_right_buy span {
+    font-size: 15px;
+    margin-top: 9px;
+    float: left;
+    margin-left: 60px;
+}
