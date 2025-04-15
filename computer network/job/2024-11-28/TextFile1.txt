@@ -1,0 +1,78 @@
+完整 IP 地址分配总结
+网络                  网络地址                 子网掩码					     可用地址范围							路由器接口地址
+R1 (Fa0/0)        192.168.1.0/26			255.255.255.192				192.168.1.1 - 192.168.1.62				192.168.1.62
+R2 (Fa0/1)        192.168.1.64/27			255.255.255.224			192.168.1.65 - 192.168.1.94				192.168.1.94
+R2 (Fa0/0)        192.168.1.96/28			255.255.255.240			192.168.1.97 - 192.168.1.110			192.168.1.110
+R3 (Fa0/0)        192.168.1.112/29			255.255.255.248			192.168.1.113 - 192.168.1.118			192.168.1.118
+WAN (R1-R2)       192.168.1.120/30			255.255.255.252			192.168.1.121 - 192.168.1.122			N/A
+WAN (R1-R3)       192.168.1.124/30			255.255.255.252			192.168.1.125 - 192.168.1.126			N/A
+WAN (R2-R3)       192.168.1.128/30			255.255.255.252			192.168.1.129 - 192.168.1.130			N/A
+
+
+
+如果输入上面表的IP地址，那么下面注释#的行不用在命令行输入
+
+1. R1 配置
+R1：
+#R1(config)# interface fastEthernet 0/0
+#R1(config-if)# ip address 192.168.1.62 255.255.255.192
+#R1(config-if)# no shutdown
+
+R1(config)# interface serial 0/0
+#R1(config-if)# ip address 192.168.1.121 255.255.255.252
+R1(config-if)# clock rate 56000
+R1(config-if)# no shutdown
+
+R1(config)# interface serial 0/1
+#R1(config-if)# ip address 192.168.1.125 255.255.255.252
+R1(config-if)# clock rate 56000
+R1(config-if)# no shutdown
+2. R2 配置
+
+R2(config)# interface fastEthernet 0/0
+#R2(config-if)# ip address 192.168.1.78 255.255.255.240
+#R2(config-if)# no shutdown
+“”“”“
+R2(config)# interface fastEthernet 0/1
+R2(config-if)# ip address 192.168.1.110 255.255.255.224
+R2(config-if)# no shutdown
+
+R2(config)# interface serial 0/0/0
+#R2(config-if)# ip address 192.168.1.122 255.255.255.252
+#R2(config-if)# no shutdown
+
+#R2(config)# interface serial 0/0/1
+#R2(config-if)# ip address 192.168.1.129 255.255.255.252
+#R2(config-if)# no shutdown
+3. R3 配置
+
+#R3(config)# interface fastEthernet 0/0
+#R3(config-if)# ip address 192.168.1.118 255.255.255.248
+#R3(config-if)# no shutdown
+
+#R3(config)# interface serial 0/0
+#R3(config-if)# ip address 192.168.1.126 255.255.255.252
+#R3(config-if)# no shutdown
+
+#R3(config)# interface serial 0/1
+#R3(config-if)# ip address 192.168.1.130 255.255.255.252
+#R3(config-if)# no shutdown
+
+
+
+4. PC 配置
+根据编址方案，PC 接口配置如下：
+
+PC1 (R1 网络)：192.168.1.1，子网掩码 255.255.255.192
+PC2 (R2 网络)：192.168.1.65，子网掩码 255.255.255.240
+PC3 (R3 网络)：192.168.1.113，子网掩码 255.255.255.248
+
+
+
+
+
+
+5. 服务器配置
+服务器1 (R1 网络)：192.168.1.2，子网掩码 255.255.255.192
+服务器2 (R2 网络)：192.168.1.79，子网掩码 255.255.255.240
+服务器3 (R3 网络)：192.168.1.119，子网掩码 255.255.255.248

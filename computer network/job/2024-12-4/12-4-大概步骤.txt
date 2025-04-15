@@ -1,0 +1,104 @@
+1 图片上包含的ip地址是正确，请按照接线端口进行接线，不要眼睛长沟子后面去了瞎几把乱接
+服务器就只能连接一个这，所以图中看不到服务器连接端口，望知
+
+
+2 以下2指令
+
+R1路由器指令
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R1-ISP
+R1-ISP(config)#banner motd #xxxxxxxx# 这里的XXX是随便输入英文字母多少任选 因为该软件不支持汉字 切记如果输入后会有多行空格可以输入#结束 然后回车
+R1-ISP(config)#int fa0/0
+R1-ISP(config-if)#ip add 192.168.3.78 255.255.255.240
+R1-ISP(config-if)#no shut
+R1-ISP(config-if)#int s0/0/0
+R1-ISP(config-if)#ip add 192.168.3.98 255.255.255.252
+R1-ISP(config-if)#clock rate 64000
+R1-ISP(config-if)#no shut
+
+R1-ISP(config-if)#ip route 192.168.3.0 255.255.255.224 192.168.3.97
+R1-ISP(config)#line console 0
+R1-ISP(config-line)#password cisco
+R1-ISP(config-line)#login
+R1-ISP(config)#line vty 0 4
+R1-ISP(config-line)#password cisco
+R1-ISP(config-line)#login
+R1-ISP(config)# end
+如果还是没有回到R2-Central#开头的话，再输入exit回车
+R1-ISP# copy running-config startup-config
+
+
+
+R2指令
+Router>en
+Router#conf t
+Router(config)#hostname R2-Central
+R2-Central(config)#banner motd #xxx# 这里的XXX是随便输入英文字母多少任选 因为该软件不支持汉字 切记如果输入后会有多行空格可以输入#结束 然后回车
+R2-Central(config)#int fa0/0
+R2-Central(config-if)#ip add 192.168.3.30 255.255.255.224
+R2-Central(config-if)#no shut
+R2-Central(config-if)#int s0/0/0
+R2-Central(config-if)#ip add 192.168.3.97 255.255.255.252
+R2-Central(config-if)#no shut
+R2-Central(config-if)#ex
+R2-Central(config)#ip route 0.0.0.0 0.0.0.0 192.168.3.98
+
+R2-Central(config)#line console 0
+R2-Central(config-line)#password cisco
+R2-Central(config-line)#login
+R2-Central(config)#line vty 0 4
+R2-Central(config-line)#password cisco
+R2-Central(config-line)#login
+R2-Central(config)# end
+如果还是没有回到R2-Central#开头的话，再输入exit回车
+R2-Central#copy running-config startup-config 
+
+
+交换机指令
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname S1-Central
+S1-Central(config)#banner motd #xxx# 
+S1-Central(config)#line c
+S1-Central(config)#line console 0
+S1-Central(config-line)#pass
+S1-Central(config-line)#password cisco
+S1-Central(config-line)#login
+S1-Central(config-line)#line vty 0 4
+S1-Central(config-line)#pas
+S1-Central(config-line)#password cisco
+S1-Central(config-line)#login
+S1-Central#copy running-config startup-config 
+
+服务器配置
+IP 地址：192.168.3.45
+子网掩码：255.255.255.240
+默认网关：192.168.3.46
+DNS 服务：启用并配置域名 eagle-server.example.com
+HTTP 服务：启用 然后可以不管HTTP服务了
+服务器的fa0/0端口配置如下（可以不输入指令）
+IP地址：192.168.3.77
+子网掩码：255.255.255.240
+
+
+记得按开机键，哈戳戳的不按开机键你下面填进去了跟你姓
+
+配置 1A：
+bash
+IP 地址：192.168.3.1
+子网掩码：255.255.255.224
+默认网关：192.168.3.30
+DNS服务器：192.168.3.77
+
+配置 1B：
+bash
+IP 地址：192.168.3.2
+子网掩码：255.255.255.224
+默认网关：192.168.3.30
+DNS服务器：192.168.3.77
+
+
+如果完了还没有100 联
